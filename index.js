@@ -12,5 +12,35 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const titles = []
+
+  tutorials.map((title) => {
+    const splitTitle = title.split(" ")
+    const joinedWords = []
+
+    for (const word of splitTitle) {
+      joinedWords.push(word.charAt(0).toUpperCase() + word.slice(1))
+    }
+
+    titles.push(joinedWords.join(" "))
+  })
+
+  return titles
 }
+
+/*const titleCased = () => {
+
+  const capitalize = tutorials.map((title) => {
+
+    const splitTitle = title.split(" ")
+
+    const wordCased = splitTitle.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+
+    return wordCased.join(" ")
+
+    })
+
+    return capitalize;
+}*/
+
+console.log(titleCased())
